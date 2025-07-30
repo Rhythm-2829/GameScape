@@ -1,0 +1,6 @@
+As a user, I want to add a review for a game.
+As a gamer, I want to view all reviews for specific game.
+As a developer, I want to register myself with name and website.
+As an admin, I want to list all the games along with their details.
+As a user, I want to see all reviews I have given across different games.
+As a user, I want to delete a game, review, or developer.
