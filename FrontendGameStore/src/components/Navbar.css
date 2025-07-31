@@ -1,0 +1,106 @@
+/* --- Navbar Styling --- */
+.navbar {
+  background: linear-gradient(135deg, #2c3e50 0%, #4a69bd 100%); /* Dark blue to purple gradient */
+  padding: 18px 40px; /* More padding */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* Stronger, more dramatic shadow */
+  display: flex;
+  justify-content: center; /* Center items for a balanced look */
+  gap: 30px; /* Increased space between links */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Higher z-index to ensure it's on top */
+  border-bottom: 3px solid #00c6ff; /* A thin, vibrant bottom border */
+}
+
+.nav-link {
+  color: #e0eafc; /* Light text color for contrast against dark background */
+  text-decoration: none;
+  font-weight: 700; /* Bolder text */
+  font-size: 1.1rem; /* Slightly larger font size */
+  padding: 8px 15px; /* Padding for click area */
+  border-radius: 8px; /* Slightly rounded corners for links */
+  transition: all 0.3s ease-in-out; /* Smooth transitions for hover effects */
+  position: relative; /* Needed for the underline animation */
+  overflow: hidden; /* Hide overflow for animation */
+}
+
+.nav-link:hover {
+  color: #ffffff; /* White text on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+  background-color: rgba(255, 255, 255, 0.1); /* Slight translucent background on hover */
+}
+
+/* Creative underline effect */
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px; /* Thickness of the underline */
+  background-color: #00c6ff; /* Vibrant blue underline */
+  transform: translateX(-100%); /* Start off-screen to the left */
+  transition: transform 0.3s ease-out; /* Slide in effect */
+}
+
+.nav-link:hover::before {
+  transform: translateX(0); /* Slide into view on hover */
+}
+
+/* Specific styling for 'Add' buttons to make them stand out */
+.nav-add-btn {
+  background: linear-gradient(45deg, #00c6ff, #0072ff); /* Blue to deeper blue gradient */
+  color: white; /* White text */
+  padding: 10px 20px; /* More padding */
+  border-radius: 25px; /* Pill-shaped button */
+  box-shadow: 0 4px 15px rgba(0, 198, 255, 0.4); /* Glow effect */
+  font-weight: 800; /* Extra bold */
+  font-size: 1rem; /* Consistent font size */
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-add-btn:hover {
+  background: linear-gradient(45deg, #0072ff, #0056b3); /* Darker gradient on hover */
+  transform: scale(1.05) translateY(-3px); /* More pronounced lift and slight scale */
+  box-shadow: 0 6px 20px rgba(0, 114, 255, 0.6); /* More intense glow */
+  color: white; /* Ensure text remains white */
+}
+
+.nav-add-btn::before {
+  /* Remove the underline animation for add buttons */
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+    gap: 15px; /* Reduce gap on smaller screens */
+    justify-content: flex-start; /* Align to start on smaller screens */
+  }
+
+  .nav-link {
+    font-size: 0.95rem; /* Slightly smaller font */
+    padding: 6px 12px;
+  }
+
+  .nav-add-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column; /* Stack links vertically */
+    align-items: center; /* Center items when stacked */
+    padding: 15px 10px;
+  }
+
+  .nav-link, .nav-add-btn {
+    width: 90%; /* Make links take more width */
+    text-align: center;
+    margin-bottom: 8px; /* Space between stacked links */
+  }
+}

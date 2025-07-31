@@ -1,0 +1,77 @@
+.game-detail {
+  background-color: white;
+  padding: 24px;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+.game-detail h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.game-detail p {
+  font-size: 1rem;
+  margin: 8px 0;
+  color: #555;
+}
+
+.game-detail hr {
+  margin: 32px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.average-rating {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.reviews-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.review-card {
+  background-color: #f9f9f9;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.review-card p {
+  margin: 4px 0;
+  color: #444;
+}
+
+.review-card strong {
+  color: #333;
+}
+
+.delete-btn {
+  margin-top: 8px;
+  background: none;
+  border: none;
+  color: #dc2626; /* Tailwind red-600 */
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.delete-btn:hover {
+  color: #b91c1c; /* Tailwind red-700 */
+}

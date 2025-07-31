@@ -1,0 +1,80 @@
+/* FILE: src/index.css (Complete & Fixed) */
+
+/* --- Step 1: Saare zaroori fonts ek saath import karein --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/* --- Step 2: Global color variables banayein --- */
+:root {
+    --primary-color: #00aaff;
+    --secondary-color: #ff00c1; /* Cyberpunk Pink */
+    --accent-color: #00ff7f; /* Terminal Green */
+    
+    --background-color: #0a0f18;
+    --card-background: #101827;
+    --text-color: #e0e0e0;
+    --text-muted: #8899a6;
+    --navbar-height: 70px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- YEH FIX ADD KIYA GAYA HAI --- */
+/* Step A: Ensure html, body, and #root take full space */
+html, body, #root {
+    height: 100%;
+    width: 100%;
+}
+
+/* Step B: Make the #root div responsible for centering everything */
+#root {
+    display: flex;
+    justify-content: center; /* Horizontally Center */
+    align-items: center;     /* Vertically Center */
+    
+    padding: 2rem;           
+    box-sizing: border-box; 
+}
+/* --- FIX ENDS HERE --- */
+
+
+/* --- Step 3: Universal body style banayein --- */
+body {
+    font-family: 'Poppins', sans-serif; /* Default font */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    
+    /* Subtle animated starfield background */
+    background-image: 
+        radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px),
+        radial-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1) 2px, transparent 30px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+    animation: starfield 200s linear infinite;
+}
+
+@keyframes starfield {
+    from { background-position: 0 0, 40px 60px, 130px 270px, 70px 100px; }
+    to { background-position: -10000px 5000px, -10000px 5000px, -10000px 5000px, -10000px 5000px; }
+}
+
+/* Scrollbar styling */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+body::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    border: 2px solid var(--background-color);
+}

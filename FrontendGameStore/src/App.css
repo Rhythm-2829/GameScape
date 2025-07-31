@@ -1,0 +1,60 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container (for your main div) */
+.max-w-3xl {
+  max-width: 48rem; /* 3xl = 768px approx */
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.p-6 {
+  padding: 1.5rem; /* 24px */
+}
+
+/* Game Card */
+.game-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  padding: 16px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease;
+}
+
+.game-card:hover {
+  transform: scale(1.02);
+}
+
+.game-card h3 {
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.game-card p {
+  margin: 4px 0;
+  color: #666;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}

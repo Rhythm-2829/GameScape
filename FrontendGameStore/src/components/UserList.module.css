@@ -1,0 +1,137 @@
+/* FILE: UserList.module.css */
+
+.userContainer {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+/* --- MODIFICATION: Animated Gradient Title --- */
+.title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    background: linear-gradient(90deg, #43cea2, #185a9d, #43cea2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    
+    background-size: 200% 100%;
+    animation: fadeInDown 1s ease-out, textShine 5s linear infinite;
+}
+
+@keyframes textShine {
+    from { background-position: 200% center; }
+    to { background-position: 0% center; }
+}
+
+/* --- MODIFICATION: Added 'perspective' for 3D effect --- */
+.userList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem; /* Slightly more gap */
+    list-style: none;
+    padding: 0;
+    perspective: 1000px; /* This enables the 3D space */
+}
+
+/* --- MODIFICATION: Enhanced User Card --- */
+.userCard {
+    position: relative;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: left;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Smoother transition */
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+    transform-style: preserve-3d; /* Important for 3D transforms */
+}
+
+/* --- MODIFICATION: 3D Tilt Hover Effect --- */
+.userCard:hover {
+    transform: scale(1.05) rotateX(10deg) rotateY(5deg) translateZ(30px);
+    box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.6);
+}
+
+/* --- MODIFICATION: Animated Hue-Rotate Border --- */
+.userCard::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 15px;
+    padding: 2px;
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: -2;
+    animation: rotateBorder 4s linear infinite;
+}
+
+@keyframes rotateBorder {
+    100% { filter: hue-rotate(360deg); }
+}
+
+/* --- MODIFICATION: Holographic Glow Effect on Hover --- */
+.userCard::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(67, 206, 162, 0.4), transparent 70%);
+    filter: blur(50px);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+}
+
+.userCard:hover::after {
+    opacity: 1;
+}
+
+/* Card Content Styling (No major changes needed here) */
+.userCard h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+.userCard p {
+    margin: 0;
+    color: #c0c0c0;
+    font-size: 1rem;
+    font-weight: 300;
+    word-break: break-all;
+}
+.userCard p strong {
+    font-weight: 400;
+    color: #a0a0a0;
+}
+
+/* Staggered Animation for Cards */
+.userCard:nth-child(1) { animation-delay: 0.1s; }
+.userCard:nth-child(2) { animation-delay: 0.2s; }
+.userCard:nth-child(3) { animation-delay: 0.3s; }
+.userCard:nth-child(4) { animation-delay: 0.4s; }
+.userCard:nth-child(5) { animation-delay: 0.5s; }
+.userCard:nth-child(6) { animation-delay: 0.6s; }
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

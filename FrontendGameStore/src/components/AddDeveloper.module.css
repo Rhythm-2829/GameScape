@@ -1,0 +1,144 @@
+/* FILE: AddDeveloper.module.css (Updated to match AddGame.css) */
+
+/* ---- Form Container with Animated Border (from AddGame) ---- */
+.formContainer {
+    width: 100%;
+    max-width: 500px;
+    padding: 3px; /* Space for the gradient border */
+    background: linear-gradient(145deg, #ff00ff, #00c3ff); /* Neon gradient */
+    border-radius: 20px;
+    animation: rotateGlow 5s linear infinite;
+
+    /* --- Add these lines for centering --- */
+    margin-left: auto;
+    margin-right: auto;
+    /* Optional: for vertical spacing */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+@keyframes rotateGlow {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* ---- The actual form inside the container (from AddGame) ---- */
+.form {
+    background: #101022; /* Dark inner background */
+    padding: 2.5rem 2rem;
+    border-radius: 18px; /* Slightly smaller to show the border */
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---- Futuristic Title (from AddGame) ---- */
+.formTitle {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #fff;
+    text-shadow:
+        0 0 5px #00c3ff,
+        0 0 10px #00c3ff,
+        0 0 20px #00c3ff,
+        0 0 40px #ff00ff,
+        0 0 80px #ff00ff;
+    animation: flicker 3s infinite alternate;
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #00c3ff,
+            0 0 19px #00c3ff,
+            0 0 40px #ff00ff,
+            0 0 80px #ff00ff;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+/* ---- Label, Input, and Select Styling (from AddGame) ---- */
+.form label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #00c3ff;
+    letter-spacing: 1px;
+}
+
+.form input {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #00c3ff;
+    border-radius: 8px;
+    padding: 12px 15px;
+    color: #e0e0e0;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 10px rgba(0, 195, 255, 0.2);
+}
+
+.form input:focus {
+    outline: none;
+    border-color: #ff00ff;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.7), inset 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+/* ---- Cyberpunk Submit Button (from AddGame) ---- */
+.submitBtn {
+    background: transparent;
+    border: 2px solid #00c3ff;
+    color: #00c3ff;
+    padding: 14px 20px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    clip-path: polygon(90% 0, 100% 50%, 90% 100%, 0% 100%, 10% 50%, 0% 0%);
+    margin-top: 1rem;
+}
+
+.submitBtn:hover {
+    color: #101022;
+    background: #00c3ff;
+    border-color: #00c3ff;
+    box-shadow: 0 0 25px #00c3ff;
+}
+
+.submitBtn:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px #00c3ff;
+}
+
+/* ---- Form Row for Horizontal Layout ---- */
+.formRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.formRow label {
+    min-width: 90px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #00c3ff;
+    letter-spacing: 1px;
+    margin-bottom: 0; /* Remove vertical spacing for horizontal layout */
+}
+
+.formRow input {
+    flex: 1;
+    margin-bottom: 0; /* Remove extra margin for horizontal layout */
+}
